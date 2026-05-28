@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');  
+:root { --dorado: #D4AF37; --verde: #2E8B57; --azul: #1A2A44; --rosa: #FFB6C1; --celeste: #87CEEB; }  
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Baskervville', serif; }  
+  
+body { color: #fff; overflow-x: hidden; }  
+.fondo-ollantay {  
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;  
+  background: url('https://images.unsplash.com/photo-1526392060635-9d6019884377') center/cover fixed;  
+  filter: brightness(0.5); z-index: -1;  
+}  
+  
+/* Loader Llama 3D */  
+#loader-llama { position: fixed; inset: 0; background: var(--azul); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; animation: fadeOut 1s 3s forwards; }  
+#llama3d { width: 300px; height: 300px; }  
+#loader-llama h2 { color: var(--dorado); font-size: 2.5rem; margin-top: 20px; }  
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }  
+  
+#app { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; transition: opacity 1s; }  
+#app.hidden { opacity: 0; pointer-events: none; }  
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); color: var(--dorado); text-shadow: 0 0 20px var(--dorado); margin-bottom: 50px; letter-spacing: 3px; }  
+  
+.menu { display: flex; flex-direction: column; gap: 30px; width: 100%; max-width: 500px; }  
+.cuadro-vivienda,.cuadro-reportes {  
+  padding: 30px; text-align: center; font-size: 1.8rem; font-weight: bold;  
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(15px);  
+  border: 2px solid rgba(255,255,255,0.2); border-radius: 20px;  
+  cursor: pointer; transition: all 0.3s;  
+}  
+.cuadro-vivienda:hover,.cuadro-reportes:hover { transform: translateY(-5px); border-color: var(--dorado); box-shadow: 0 10px 30px rgba(212,175,55,0.4); }  
+#btn-calicanto { border-left: 8px solid var(--dorado); }  
+#btn-andenes { border-left: 8px solid var(--verde); }  
+.cuadro-reportes { margin-top: 20px; font-size: 1.4rem; }  
+  
+.bloc-aislado { position: fixed; bottom: 20px; left: 20px; width: 300px; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); border: 1px solid var(--dorado); border-radius: 15px; padding: 15px; z-index: 10; }  
+.bloc-aislado h3 { color: var(--dorado); margin-bottom: 10px; }  
+.bloc-aislado textarea { width: 100%; height: 100px; background: transparent; border: none; color: #fff; outline: none; resize: none; }  
+  
+/* Modales / Sobre pestañas */  
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 100; padding: 20px; }  
+.modal.hidden { display: none; }  
+.modal-content { background: var(--azul); padding: 30px; border-radius: 20px; border: 2px solid var(--dorado); max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; }  
+  
+/* Habitaciones y Camas */  
+.grid-hab { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }  
+.card-hab { padding: 20px; border-radius: 15px; text-align: center; cursor: pointer; background: rgba(255,255,255,0.1); border: 2px solid #555; }  
+.card-hab.ocupada-M { background: var(--celeste); border-color: #00f; }  
+.card-hab.ocupada-F { background: var(--rosa); border-color: #f0f; }  
+.card-hab.cama { margin: 5px; padding: 10px; background: #333; border-radius: 8px; cursor: pointer; }  
+.card-hab.cama.ocupada { background: #f00; cursor: not-allowed; }  
+  
+.form-datos input,.form-datos select,.form-datos button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; font-size: 1rem; }  
+.form-datos button { background: var(--dorado); color: #000; font-weight: bold; cursor: pointer; }  
+  
+.tabla-reportes { display: flex; gap: 20px; }  
+.tabla-izq,.tabla-der { flex: 1; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; max-height: 400px; overflow-y: auto; }  
+.btn-liberar { background: #f00; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 10px; }  
+  
+@media(max-width: 768px) {  
+ .bloc-aislado { width: 200px; bottom: 100px; }  
+ .tabla-reportes { flex-direction: column; }  
+}  

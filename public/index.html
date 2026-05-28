@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>INCA RAIL ESAB</title>  
+  <link rel="stylesheet" href="style.css">  
+  <script type="importmap">  
+  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }  
+  </script>  
+</head>  
+<body>  
+  <!-- 1. Loader Llama 3D -->  
+  <div id="loader-llama">  
+    <canvas id="llama3d"></canvas>  
+    <h2>INCA RAIL ESAB</h2>  
+  </div>  
+  
+  <div class="fondo-ollantay"></div>  
+  
+  <main id="app" class="hidden">  
+    <h1>INCA RAIL ESAB</h1>  
+  
+    <div class="menu">  
+      <div class="cuadro-vivienda" id="btn-calicanto">  
+        <span>VIVIENDA CALICANTO</span>  
+      </div>  
+      <div class="cuadro-vivienda" id="btn-andenes">  
+        <span>VIVIENDA ANDENES</span>  
+      </div>  
+      <div class="cuadro-reportes" id="btn-reportes">REPORTES</div>  
+    </div>  
+  
+    <div id="bloc-notas" class="bloc-aislado">  
+      <h3>PARA FIRMAR DOCUMENTOS</h3>  
+      <textarea placeholder="Bloc de notas independiente..."></textarea>  
+    </div>  
+  </main>  
+  
+  <!-- Modales - Sobre pestañas dentro de la misma página -->  
+  <div id="modal-habitaciones" class="modal hidden"></div>  
+  <div id="modal-camas" class="modal hidden"></div>  
+  <div id="modal-datos" class="modal hidden"></div>  
+  <div id="modal-reportes" class="modal hidden"></div>  
+  
+  <script type="module" src="script.js"></script>  
+</body>  
+</html>  
